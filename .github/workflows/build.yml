@@ -1,11 +1,6 @@
 name: Build
 
 on:
-  pull_request:
-    branches:
-      - main
-      - 'release/**'
-      - 'intermediate/**'
   workflow_dispatch:
 
 concurrency:
