@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Runway Demo"
 include(":app")
- 
