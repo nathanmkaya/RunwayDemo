@@ -9,6 +9,10 @@ concurrency:
 
 jobs:
   build:
+    env:
+      KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+      GFE_PASSWORD: ${{ secrets.GFE_PASSWORD }}
     name: "Build"
     runs-on: ubuntu-latest
     timeout-minutes: 90
@@ -33,4 +37,4 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Build all build type and flavor permutations
-        run: ./gradlew bundle
+        run: ./gradlew decryptFiles publishReleaseBundle
