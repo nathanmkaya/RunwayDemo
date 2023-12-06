@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("build-parameters")
+    alias(libs.plugins.play.publisher)
 }
 
 android {
@@ -21,21 +23,31 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("../keystore/prod.keystore")
+            storePassword = buildParameters.storePassword.getOrElse("")
+            keyAlias = "thermal"
+            keyPassword = buildParameters.keyPassword.getOrElse("")
+        }
+    }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -48,6 +60,18 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    playConfigs {
+        register("release") {
+            enabled.set(true)
+            track.set("internal")
+        }
+    }
+}
+
+play {
+    serviceAccountCredentials.set(rootProject.file("api-6606706446287510446-244527-289ca6441abf.json"))
+    defaultToAppBundles.set(true)
+    resolutionStrategy.set(com.github.triplet.gradle.androidpublisher.ResolutionStrategy.AUTO)
 }
 
 dependencies {
