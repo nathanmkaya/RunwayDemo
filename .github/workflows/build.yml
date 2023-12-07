@@ -36,5 +36,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
+      - name: Decrypt Files
+        uses: ./gradlew decryptFiles
+
       - name: Build all build type and flavor permutations
-        run: ./gradlew decryptFiles publishReleaseBundle
+        run: ./gradlew publishReleaseBundle
