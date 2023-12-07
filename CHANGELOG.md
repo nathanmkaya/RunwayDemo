@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/nathanmkaya/RunwayDemo/compare/v1.0.0...v1.0.1) (2023-12-07)
+
+
+### Bug Fixes
+
+* **ci:** supress warning ([e1d48a2](https://github.com/nathanmkaya/RunwayDemo/commit/e1d48a284b68e65b055dbafe3a29ccf394539ee6))
+
 ## 1.0.0 (2023-12-07)
 
 
