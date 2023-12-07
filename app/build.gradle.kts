@@ -27,7 +27,7 @@ android {
         create("release") {
             storeFile = file("../keystore/prod.keystore")
             storePassword = buildParameters.storePassword.getOrElse("")
-            keyAlias = "thermal"
+            keyAlias = "prod"
             keyPassword = buildParameters.keyPassword.getOrElse("")
         }
     }
