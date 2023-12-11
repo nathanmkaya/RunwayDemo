@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":thermal")
+
+
 pluginManagement {
     includeBuild("gradle/plugins")
     repositories {
