@@ -1,7 +1,7 @@
-library:
+'library :package:':
 - changed-files:
     - any-glob-to-any-file: 'thermal/**/*'
 
-app:
+'app':
 - changed-files:
     - any-glob-to-any-file: 'thermal-demo/**/*'
