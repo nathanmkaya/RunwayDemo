@@ -11,6 +11,8 @@ compose-bom = "2023.10.01"
 buildParameters = "1.4.3"
 playPublisher = "3.8.6"
 gradleFileEncrypt = "2.0.3"
+appcompat = "1.6.1"
+material = "1.9.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -27,6 +29,8 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -34,4 +38,5 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 build-parameters = { id = "org.gradlex.build-parameters", version.ref = "buildParameters" }
 play-publisher = { id = "com.github.triplet.play", version.ref = "playPublisher" }
 file-encrypt = { id = "com.cherryperry.gradle-file-encrypt", version.ref = "gradleFileEncrypt" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 
