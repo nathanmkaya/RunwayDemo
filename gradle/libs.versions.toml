@@ -8,7 +8,7 @@ espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.1"
 compose-bom = "2023.10.01"
-buildParameters = "1.4.3"
+buildParameters = "1.4.4"
 playPublisher = "3.8.6"
 gradleFileEncrypt = "2.0.3"
 
